@@ -1,0 +1,38 @@
+// 9/10/24 - where it all starts
+import pygame
+import cv2
+
+pygame.init()
+
+screen_width = 800
+screen_height = 600
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("Loading Screen/Cutscene")
+
+def play_video(video_file):
+    cap = cv2.VideoCapture(video_file)
+    
+    while cap.isOpened():
+        ret, frame = cap.read()
+
+        if not ret:
+            break
+
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        frame = pygame.surfarray.make_surface(frame)
+        frame = pygame.transform.scale(frame, (screen_width, screen_height))
+        screen.blit(frame, (0, 0))
+        pygame.display.update()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                cap.release()
+                pygame.quit()
+                return
+
+    cap.release()
+
+video_file = 'C:\Program Files\EggProductions\brokenland\screens\loadingscreen.mp4'
+play_video(video_file)
+
+pygame.quit()
