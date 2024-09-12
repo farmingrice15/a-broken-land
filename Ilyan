@@ -9,3 +9,15 @@ player1 = Character("Ilyan", "Passive", "Explorer")
 print(player1.name)
 print(player1.attribute)
 print(player1.role)
+
+class Character:
+  def __init__(self, name, attribute, role):
+      self.name = name
+      self.attribute = attribute
+      self.role = role
+
+
+player3 = Character("Elena", "Passive", "Explorer")
+print(player3.name)
+print(player3.attribute)
+print(player3.role)
