@@ -17,6 +17,18 @@ class Character:
       self.role = role
 
 
+player2 = Character("Kaela", "Passive", "Explorer")
+print(player2.name)
+print(player2.attribute)
+print(player2.role)
+
+class Character:
+  def __init__(self, name, attribute, role):
+      self.name = name
+      self.attribute = attribute
+      self.role = role
+
+
 player3 = Character("Elena", "Passive", "Explorer")
 print(player3.name)
 print(player3.attribute)
