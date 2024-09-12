@@ -1,0 +1,11 @@
+class Character:
+  def __init__(self, name, attribute, role):
+      self.name = name
+      self.attribute = attribute
+      self.role = role
+
+
+player1 = Character("Ilyan", "Passive", "Explorer")
+print(player1.name)
+print(player1.attribute)
+print(player1.role)
